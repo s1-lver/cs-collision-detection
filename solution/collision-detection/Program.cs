@@ -1,16 +1,24 @@
+using System.Windows.Forms.VisualStyles;
+using Timer = System.Windows.Forms.Timer;
+
 namespace collision_detection;
 
 static class Program
 {
-    /// <summary>
-    ///  The main entry point for the application.
-    /// </summary>
+    private static CollisionWindow _window = new CollisionWindow();
+    
     [STAThread]
     static void Main()
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        Application.Run(new CollisionWindow());
-    }    
+        Time.Start();
+        Application.Run(_window);
+    }
+
+    public static void Update()
+    {
+        
+        // window update should be last
+        _window._Update();
+    }
 }
