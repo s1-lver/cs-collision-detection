@@ -18,6 +18,8 @@ partial class CollisionWindow
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(800, 450);
         this.Text = "Collision Detection";
+        KeyDown += CollisionWindow_KeyDown;
+        KeyUp += CollisionWindow_KeyUp;
 
         this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
                       ControlStyles.UserPaint |

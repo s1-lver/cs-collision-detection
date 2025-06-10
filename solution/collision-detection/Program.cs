@@ -5,7 +5,11 @@ namespace collision_detection;
 
 static class Program
 {
-    private static CollisionWindow _window = new CollisionWindow();
+    private static InputHandler _inputHandler = new();
+    private static CollisionWindow _window = new CollisionWindow(_inputHandler);
+    
+
+    public static PlayerController Player = new(_inputHandler);
     
     [STAThread]
     static void Main()
@@ -17,7 +21,7 @@ static class Program
 
     public static void Update()
     {
-        
+        Player.Update();
         // window update should be last
         _window._Update();
     }
